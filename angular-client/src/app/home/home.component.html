@@ -1,0 +1,38 @@
+<h1>{{title}}</h1>
+<div style='width: 800px; padding: 20px; '>
+  <div style='float: left;' *ngIf='players[0] == null'>
+    <h2>Player 1</h2>
+    Github Username:
+    <input type='text' name='username' [(ngModel)] = 'newPlayer.username1' required #username1='ngModel'><br/><br/>
+    <button [disabled] ='username1.errors'(click) = 'retrivePlayer(username1.value)'>Get User</button>
+  </div>
+
+  <div *ngIf='players[0] != null' style='float: left;'>
+    <p><img src="{{players[0].avatar}}" height="200" width="200"></p>
+    <p>{{players[0].username}}</p>
+  </div>
+
+
+  <div style='float: right;' *ngIf='players[1] == null'>
+    <h2>Player 2</h2>
+    Github Username:
+    <input type='text' name='username' [(ngModel)] = 'newPlayer.username2' required #username2='ngModel'><br/><br/>
+    <button [disabled] ='username2.errors' (click) = 'retrivePlayer(username2.value)'>Get User</button>
+  </div>
+
+  <div *ngIf='players[1] != null' style='float: right;'>
+    <p><img src="{{players[1].avatar}}" height="200" width="200"></p>
+    <p>{{players[1].username}}</p>
+  </div>
+
+  <div *ngIf = 'msg'>
+    <p style ='color: red' *ngIf='msg'>{{msg}}</p>
+  </div>
+
+  <div style='clear:both'>
+      <button (click) = 'battle()' *ngIf='players.length == 2'>Battle</button>
+  </div>
+
+</div>
+
+

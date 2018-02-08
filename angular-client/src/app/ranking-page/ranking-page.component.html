@@ -1,0 +1,9 @@
+<h1>{{title}}</h1>
+<table border='1'>
+  <tr *ngFor='let p of players, let idx = index'>
+    <td>{{idx + 1}}</td>
+    <td><img width='200px' height='200px' src={{p.avatar}}/></td>
+    <td>{{p.username}}</td>
+    <td>{{p.score}}</td>
+  </tr>
+</table>

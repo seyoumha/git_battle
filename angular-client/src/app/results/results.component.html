@@ -1,0 +1,17 @@
+<h1>{{title}}</h1>
+<div style='float:left'>
+  <div *ngIf='firstPlace'>
+    <h2 style='color: green;'>1st Place</h2>
+    <p style='color: green;'>{{firstPlace.username}} (Score: {{firstPlace.score}})</p>
+  </div>
+  <div *ngIf='secondPlace'>
+    <h2 style='color: red;'>2st Place</h2>
+    <p style='color: red;'>{{secondPlace.username}} (Score: {{secondPlace.score}})</p>
+  </div>
+</div>
+<div style='float:right' *ngIf='firstPlace'>
+  <div style='border: 1px solid black; width: 500px; padding: 20px;'>
+    <p><img src="{{firstPlace.avatar}}" height="200" width="200"></p>
+    <p>{{firstPlace.username}}</p>
+  </div>
+</div>

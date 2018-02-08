@@ -31,14 +31,14 @@ export class PlayerService {
   }
 
   saveToDB(player:Player){
-    this._http.post('http://localhost:5000/players', player).subscribe(
+    this._http.post('/players', player).subscribe(
       response => this.playersObserver.getValue().push(response.json()),
       errorResponse => console.log(errorResponse)
     )
   }
 
   getPlayers(){
-    this._http.get('http://localhost:5000/players').subscribe(
+    this._http.get('/players').subscribe(
       players => this.playersObserver.next(players.json()),
       errorResponse => console.log(errorResponse)
     )

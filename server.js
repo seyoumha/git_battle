@@ -21,7 +21,7 @@ app.use(morgan('dev'));
 const uniqueValidator = require('mongoose-unique-validator');
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/gitub-player-api');
+mongoose.connect('mongodb://localhost/github-battle');
 mongoose.connection.on('connected', () => console.log('connected to MongoDB'));
 mongoose.Promise = global.Promise;
 const { Schema } = mongoose;
